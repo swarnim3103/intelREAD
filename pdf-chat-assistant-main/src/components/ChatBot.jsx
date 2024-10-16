@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from 'react';
+import { buttonVariants } from "./ui/button";
 
 const ChatBox = () => {
   const [messages, setMessages] = useState([]);
@@ -31,7 +32,7 @@ const ChatBox = () => {
       <div className="flex">
         <input
           type="text"
-          className="flex-1 border rounded-l-lg p-2 focus:outline-none"
+          className="flex-1 border rounded-l-lg p-2 mr-10 focus:outline-none"
           placeholder="Enter your question..."
           value={input}
           onChange={e => setInput(e.target.value)}
@@ -39,7 +40,10 @@ const ChatBox = () => {
         <button
         
           onClick={handleSend}
-          className="bg-blue-500 text-white p-2 rounded-r-lg hover:bg-blue-600 transition"
+          className={buttonVariants({
+            size: 'sm', 
+
+        })}
         >
           Send
         </button>

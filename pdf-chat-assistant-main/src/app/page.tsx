@@ -20,7 +20,7 @@ export default function Home() {
                 </h1>
                 <p className='mt-5 max-w-prose text-zinc-700 sm:text-lg'>
                     intelREAD allows you to have conversation with any pdf
-                    document. Simply upload you file and start asking questions
+                    document. Simply upload your file and start asking questions
                     right away.
                 </p>
             </MaxWidthWrapper>
