@@ -32,7 +32,6 @@ const Pdf = () => {
         <div className="h-screen flex items-center justify-center">
 
         {content}
-            {/* Conditional rendering of file input */}
             {!fileUploaded && (
                 <div className="flex flex-col items-center mr-60">
                     <input
@@ -44,7 +43,6 @@ const Pdf = () => {
                     <p className="mt-2 text-gray-500">Upload a PDF file</p>
                 </div>
             )}
-                    <ChatBox/>
                     </div>
         </>
     );

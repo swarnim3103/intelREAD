@@ -13,26 +13,14 @@ export default function Navbar() {
             <MaxWidthWrapper>
                 <div className='flex h-14 items-center justify-between border-b border-zinc-200'>
                     <Link href='/' className='flex z-40 font-semibold'>
-                        <span>askpdf.</span>
+                        <span>intelREAD</span>
                     </Link>
-                    {/* todo: add mobile navbar */}
-
                     <div className='hidden items-center space-x-5 sm:flex'>
                         <>
-                            <Link
-                                href={""}
-                                className={buttonVariants({
-                                    variant: "ghost",
-                                    size: "sm",
-                                })}
-                            >
-                                Pricing
-                            </Link>
-                            <LoginLink>Sign in</LoginLink>
                             <RegisterLink className={buttonVariants({
                                 size: 'sm',
 
-                            })}>Get started <ArrowRight className="ml-1.5 h-5 w-5" /></RegisterLink>
+                            })}>Get started</RegisterLink>
                         </>
                     </div>
                 </div>
