@@ -14,7 +14,11 @@ const ChatBox = () => {
       setMessages(prev => [...prev, { text: 'AI is responding to your question...', sender: 'ai' }]);
     }
   };
-
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      handleSend();
+    }
+  };
   return (
     <div className="flex flex-col h-full border-l border-gray-300 p-4">
       <div className="flex-1 overflow-y-auto mb-4">
@@ -35,6 +39,7 @@ const ChatBox = () => {
           className="flex-1 border rounded-l-lg p-2 mr-10 focus:outline-none"
           placeholder="Enter your question..."
           value={input}
+          onKeyDown={handleKeyDown}
           onChange={e => setInput(e.target.value)}
         />
         <button
