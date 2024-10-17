@@ -10,35 +10,13 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+  url      = "file:./dev.db"
 }
 
-model User {
-  id                     String    @id @unique
-  email                  String    @unique
-  File                   File[]
-  stripeCustomerId       String?   @unique @map(name: "stripe_customer_id")
-  stripeSubscriptionId   String?   @unique @map(name: "stripe_subscription_id")
-  stripePriceId          String?   @unique @map(name: "stripe_price_id")
-  stripeCurrentPeriodEnd DateTime? @unique @map(name: "stripe_current_period_end")
-}
-
-enum uploadStatus {
-  PENDING
-  PROCESSING
-  FAILED
-  SUCCESSS
-}
-
-model File {
-  id           String       @id @default(cuid())
-  name         String
-  uploadStatus uploadStatus @default(PENDING)
-  url          String
-  key          String
-  created_at   DateTime     @default(now())
-  updated_at   DateTime     @updatedAt
-
-  User   User?   @relation(fields: [userId], references: [id])
-  userId String?
+model PdfFile {
+  id         String   @id @default(uuid())
+  fileName   String
+  filePath   String
+  sessionId  String   @unique
+  createdAt  DateTime @default(now())
 }
