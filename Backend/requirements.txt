@@ -1,0 +1,4 @@
+ctransformer==0.2.5 
+sentence-transformer=2.2.2 
+pincone-client
+langchain==0.0.225
