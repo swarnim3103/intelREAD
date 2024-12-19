@@ -1,0 +1,4 @@
+ctransformer==0.2.5 //for langchain
+sentence-transformer=2.2.2 //free embedding model
+pincone-client
+langchain==0.0.225
